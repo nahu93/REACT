@@ -3,10 +3,15 @@ import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import ItemListContainer from './components/Container/ItemListContainer'
 import NavBar from './components/NavBar/NavBar';
+import ItemCount from './components/ItemCount/ItemCount';
+
+
 
 function App() {
 
-  let greeting = 'bienvenido a mi e-commerce'
+function onAdd (cant){
+  console.log (cant)
+}
 
 
   return (
@@ -16,11 +21,10 @@ function App() {
     <div className="App" >
   
     <NavBar/>
-
-   
-    <ItemListContainer greeting= {greeting} />
-    </div> 
-   
+    <ItemListContainer/>
+    <ItemCount initial={1} stock={11} onAdd={onAdd} />
+    
+   </div>
 
    
 
