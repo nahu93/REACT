@@ -1,40 +1,48 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import DetalleWidget from '../ItemDetailContainer/DetalleWidget';
+import {Card,Button,Col,Row} from 'react-bootstrap'
+import CartWidget from "../NavBar/CartWidget";
+import ItemCount from "../ItemCount/ItemCount";
 
 export default function Item ({item}) {
 
+  function onAdd (cant) {
+    console.log(cant)
+  }
+
     return (
-        <div  className="row aling-item-center">
-        <div className="col-12 col-md-4">
-           <div key={item.id} className="card w50 mt-5" >
-          <div className="card-header">
-            {item.nombre}
-      
-          </div>
-          <div className="card-body">
+
           
+
+          <Col>
+          <Card style={{ width: '18rem' }}>
+          <Card.Img variant="top" src={item.foto} />
+          <Card.Body>
+            <Card.Title>{item.nombre}</Card.Title>
+            <Card.Text>
+              {item.precio}$
+    
+            </Card.Text> 
+            <Card.Text>
+
+          <Link to={'/item/'+ item.id}>
+
+             <DetalleWidget/>
+             
+         </Link>
+         </Card.Text>
+            <Button variant="primary">Comprar</Button>
+            
           
-            <img src={item.foto} alt="foto" />
-         
-          </div>
-      
-          <p className="card text"> {item.precio}$</p>
-          <div className="card-footer">
-            <button className="btn btn-success btn-block">AGREGAR</button>
-            <hr />
-            <Link to="/item/${item.id}">
-                <DetalleWidget/>
-            </Link>
-         
-          </div>
-        </div>
-       
-        </div>
         
-        </div>
-       
-       
+           
+          </Card.Body>
+        </Card>
+        
+
+        </Col>
+      
     )
 
 }

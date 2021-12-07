@@ -6,6 +6,7 @@ import NavBar from './components/NavBar/NavBar';
 import ItemDetailContainer from './components/ItemDetailContainer/ItemDetailContainer';
 import ItemListContainer from './components/Container/ItemListContainer'
 import Cart from './components/Cart/Cart';
+import CartContextProvider from './context/CartContext';
 
 
 
@@ -13,9 +14,6 @@ import Cart from './components/Cart/Cart';
 
 function App() {
 
-function onAdd (cant){
-  console.log (cant)
-}
 
 
   return (
@@ -23,20 +21,32 @@ function onAdd (cant){
  
     
 
-  <BrowserRouter>
+ 
 
-   <div className="App" >
+   <div className= 'border border-3 border primary'>
+
+     <center>
+
+     
+<CartContextProvider>
+
+      <BrowserRouter>  
     <NavBar/> 
     <Routes>
     <Route path='/catalogo' element={<ItemListContainer/>} />
-    <Route path='/item/:idProducto' element={<ItemDetailContainer/>} />
+    <Route path='/item/:id' element={<ItemDetailContainer/>} />
     <Route path='/cart' element={<Cart/>} />
-    
- 
     </Routes>
+    </BrowserRouter>
+
+</CartContextProvider>     
+
+</center>
+
+
    </div>
 
-  </BrowserRouter>
+  
 
   );
 }

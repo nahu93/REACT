@@ -1,8 +1,10 @@
 import React from "react";
 import { useState, useEffect} from "react";
 import { useParams } from "react-router-dom";
+import Item from "../Container/Item";
 import { getFetch, productos } from "../helpers/getFetch";
 import { ItemDetail } from "./ItemDetail";
+import {Card,Button,Col, ThemeProvider} from 'react-bootstrap'
 
 
 
@@ -10,59 +12,37 @@ import { ItemDetail } from "./ItemDetail";
 
 
 
-const ItemDetailContainer = () => {
+  const ItemDetailContainer  = ()  => {
 
-    const [productoIndividual , setProductoIndividual]= useState ({});
-    const [loading, setLoading] = useState (true);
-    const {idProducto} = useParams ();
-
-
-
-    
-
-    useEffect (()=>{
-        
-       const PromesaIndividual = new Promise ((res , rej )=>{
  
-
-        setTimeout(()=>{
-            console.log (idProducto)
-            res (productos.find (item => item.id  ) )
-            
-        },2000)
-    })
-PromesaIndividual.then ((prodEncontrado)=>{
-        console.log ('ok');
-        setProductoIndividual (prodEncontrado)
-    })
-   .catch ((error)=>{
-       console.log ('ERROR')
-   })
-   .finally (()=>{
-       setLoading(false)
-   })
-},[idProducto] )
+    const [loading ,setLoading] = useState (true) ;  
+    const [ prod , setProd]= useState ({});
+    const {id} = useParams ();
 
 
+useEffect (()=> {
+        
+  getFetch
+  .then ( (res)  => setProd (res.find ( (e) => e.id === parseInt (id) )))
+  .finally ( () => setLoading (false));  
+ }, [id])
 
-    return (
 
-     <div>
-         
+ console.log("info", prod)
+ console.log ('id', id)
+
+  
+
+
+    return ( 
     
-         <ItemDetail item={productoIndividual}/>
-         
+   <div>
 
-     </div>
-    )
+       <ItemDetail prod={prod}/>
 
-
-
-
-
-
-
-
+   </div>
+    
+    );
 }
 
 export default ItemDetailContainer

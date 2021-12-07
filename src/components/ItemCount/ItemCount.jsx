@@ -1,4 +1,7 @@
 import React, { useState } from "react";
+import {Card,Button,Col, ThemeProvider} from 'react-bootstrap'
+import {Link,NavLink} from 'react-router-dom'
+
 
 const ItemCount = ({initial, stock, onAdd}) => {
 
@@ -23,12 +26,15 @@ return (
 
     <>
     <section>
+        
         <button onClick={Sumar}>+</button>
         {count}
         <button onClick={Restar}>-</button>
 
+    
+  
         <button onClick={Agregar}>Agregar al carrito</button>
-        
+  
 
     </section>
 

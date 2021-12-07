@@ -1,3 +1,5 @@
+
+
 export const productos = [
     { id : 1, nombre: 'Barcelona',precio: 5200, foto: '../multimedia/barcelona.jpg'},
     { id : 2, nombre: 'Paris', precio: 5500,foto: "../multimedia/paris.jpg"},

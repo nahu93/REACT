@@ -1,11 +1,20 @@
-import React from "react";
+import React, {useContext} from "react";
+import { CartContext } from "../../context/CartContext";
 
-const Cart =( ) => {
+
+const Cart = ( ) => {
+
+
+    const{cartList,vaciarCarrito}= useContext(CartContext)
 
     return (
 
         <div>
-            soy Cart
+
+        { cartList.map(prod => <li key={prod.id}> {prod.nombre} {prod.cantidad}</li> ) }
+
+        <button onClick={()=>vaciarCarrito()}>Vaciar</button>
+
         </div>
     )
 
