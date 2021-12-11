@@ -5,6 +5,7 @@ import Item from "../Container/Item";
 import { getFetch, productos } from "../helpers/getFetch";
 import { ItemDetail } from "./ItemDetail";
 import {Card,Button,Col, ThemeProvider} from 'react-bootstrap'
+import { connectFirestoreEmulator, getFirestore, QuerySnapshot } from "firebase/firestore";
 
 
 
@@ -21,7 +22,21 @@ import {Card,Button,Col, ThemeProvider} from 'react-bootstrap'
 
 
 useEffect (()=> {
-        
+   /*  
+  const db = getFirestore ()
+  const itemCollection =db.collection('Productos')
+  itemCollection.get ()
+  .then(QuerySnapshot=>{
+    if(QuerySnapshot.size ===0){
+      console.log('No results')
+    }
+    setProd(QuerySnapshot.docs.map(doc=>doc.data()))
+  })
+  .catch(error=>console.log(error))
+  .finally(()=>setLoading(false))
+  }, [])
+  */
+  
   getFetch
   .then ( (res)  => setProd (res.find ( (e) => e.id === parseInt (id) )))
   .finally ( () => setLoading (false));  

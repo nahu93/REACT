@@ -3,6 +3,7 @@ import {Card,Button,Col, ThemeProvider} from 'react-bootstrap'
 import {Link,NavLink} from 'react-router-dom'
 
 
+
 const ItemCount = ({initial, stock, onAdd}) => {
 
 const [count,setCount] = useState (1)
@@ -25,14 +26,14 @@ function Agregar (){
 return (
 
 <>
-    <Button variant="primary"onClick={Sumar} >+</Button>
+    <Button variant="primary" onClick={Sumar} >+</Button>
 
     {count}
 
     
-    <Button variant="primary"onClick={Restar}>-</Button>
+    <Button variant="primary" onClick={Restar}>-</Button>
     
-    <Button variant="primary"onClick={Agregar}>Agregar</Button>
+    <Button variant="primary" onClick={Agregar}>Agregar al carrito</Button>
 
   </>
 )
