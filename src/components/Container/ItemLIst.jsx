@@ -1,4 +1,5 @@
 import React from "react";
+import { CardGroup,Row } from "react-bootstrap";
 import Item from "./Item";
 
 
@@ -10,7 +11,8 @@ export default function ItemLIst (props){
 
 
     return (
-        <div>
+        <Row xs={1} md={3} className="g-4">
+
             {
                 props.lista.map((item, index)=>{
                     return(
@@ -21,6 +23,6 @@ export default function ItemLIst (props){
                      
                 })
             }
-        </div>
+    </Row>
     )
 }

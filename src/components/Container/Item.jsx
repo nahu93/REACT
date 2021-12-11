@@ -26,17 +26,13 @@ export default function Item ({item}) {
             </Card.Text> 
             <Card.Text>
 
-          <Link to={'/item/'+ item.id}>
 
-             <DetalleWidget/>
-             
-         </Link>
          </Card.Text>
-            <Button variant="primary">Comprar</Button>
-            
-          
-        
-           
+
+            <Link to={'/item/'+ item.id}>
+            <Button variant="primary">Detalle</Button>
+            </Link>
+
           </Card.Body>
         </Card>
         

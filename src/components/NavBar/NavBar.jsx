@@ -8,8 +8,10 @@ const NavBar = () => {
 
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
   <div class="container-fluid">
-    <a class="navbar-brand" href="#">LOGO</a>
-   
+    
+  <a class="navbar-brand" href="#">
+    <img src='/multimedia/LOGO.png' alt="" width="90" height="60" />
+    </a>
    
     <ul class="nav justify-content-end">
   <li class="navbar-nav" >
@@ -24,11 +26,15 @@ const NavBar = () => {
   </ul>
   <li class="navbar-nav" >
     <Link to='/cart'><Cartwidget/></Link>
+    
   </li>
 
  
   </div>
 </nav>
+ 
+
+
  
 
 

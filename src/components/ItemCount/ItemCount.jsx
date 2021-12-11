@@ -24,22 +24,17 @@ function Agregar (){
 
 return (
 
-    <>
-    <section>
-        
-        <button onClick={Sumar}>+</button>
-        {count}
-        <button onClick={Restar}>-</button>
+<>
+    <Button variant="primary"onClick={Sumar} >+</Button>
+
+    {count}
 
     
-  
-        <button onClick={Agregar}>Agregar al carrito</button>
-  
+    <Button variant="primary"onClick={Restar}>-</Button>
+    
+    <Button variant="primary"onClick={Agregar}>Agregar</Button>
 
-    </section>
-
-
-    </>
+  </>
 )
 
 
