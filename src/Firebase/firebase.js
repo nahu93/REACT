@@ -1,6 +1,6 @@
 import firebase from 'firebase/app'
 import 'firebase/firestore'
-import { getFirestore } from 'firebase/firestore';
+
 
 var  firebaseconfig = {
 
@@ -16,8 +16,8 @@ var  firebaseconfig = {
 
 
 
-const fb = firebase.initializeApp (firebaseconfig);
+const app = firebase.initializeApp (firebaseconfig);
 
-
-
-export const dataBase = fb.firestore ();
+export default function getFirestore(){
+    return firebase.firestore(app)
+}

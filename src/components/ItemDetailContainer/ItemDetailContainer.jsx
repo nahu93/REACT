@@ -5,7 +5,10 @@ import Item from "../Container/Item";
 import { getFetch, productos } from "../helpers/getFetch";
 import { ItemDetail } from "./ItemDetail";
 import {Card,Button,Col, ThemeProvider} from 'react-bootstrap'
-import { connectFirestoreEmulator, getFirestore, QuerySnapshot } from "firebase/firestore";
+import getFirestore from "../../Firebase/firebase";
+import { useContext } from "react";
+import { CartContext } from "../../context/CartContext";
+
 
 
 
@@ -18,29 +21,24 @@ import { connectFirestoreEmulator, getFirestore, QuerySnapshot } from "firebase/
  
     const [loading ,setLoading] = useState (true) ;  
     const [ prod , setProd]= useState ({});
+    
     const {id} = useParams ();
 
 
 useEffect (()=> {
-   /*  
-  const db = getFirestore ()
-  const itemCollection =db.collection('Productos')
-  itemCollection.get ()
-  .then(QuerySnapshot=>{
-    if(QuerySnapshot.size ===0){
-      console.log('No results')
-    }
-    setProd(QuerySnapshot.docs.map(doc=>doc.data()))
-  })
-  .catch(error=>console.log(error))
-  .finally(()=>setLoading(false))
-  }, [])
-  */
+    
+ 
+  const db = getFirestore()
+  const dbQuery = db.collection('Productos').doc('8ZWNNieXy4HzgfL7Z4y7')
+  dbQuery.get()
+  .then(resp=> setProd({id:resp.id,...resp.data()}))
   
-  getFetch
+  
+  /* getFetch
   .then ( (res)  => setProd (res.find ( (e) => e.id === parseInt (id) )))
-  .finally ( () => setLoading (false));  
- }, [id])
+  .finally ( () => setLoading (false)); */
+
+ }, [])
 
 
  console.log("info", prod)
