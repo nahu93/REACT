@@ -26,10 +26,10 @@ import { CartContext } from "../../context/CartContext";
 
 
 useEffect (()=> {
-    
+  console.log ('id', id) 
  
   const db = getFirestore()
-  const dbQuery = db.collection('Productos').doc('8ZWNNieXy4HzgfL7Z4y7')
+  const dbQuery = db.collection('Productos').doc(id)
   dbQuery.get()
   .then(resp=> setProd({id:resp.id,...resp.data()}))
   
@@ -42,7 +42,7 @@ useEffect (()=> {
 
 
  console.log("info", prod)
- console.log ('id', id)
+
 
   
 

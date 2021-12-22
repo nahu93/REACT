@@ -5,6 +5,7 @@ export const CartContext = createContext ([])
 function CartContextProvider ({children}) {
 
     const [cartList,setCartList] = useState ([])
+    
 
     const agregarProducto = (item) =>{
         setCartList([...cartList, item])
@@ -13,14 +14,28 @@ function CartContextProvider ({children}) {
     const vaciarCarrito = () =>{
         setCartList([])
     }
+    
+    const widgetProducts = () => {
+        let total = 0
 
+
+        cartList.map(item => { 
+           total += item.cantidad
+        }  )
+
+       return total
+
+    }
+    
+    
   
 
     return (
         <CartContext.Provider value={{
             cartList,
             agregarProducto,
-            vaciarCarrito
+            vaciarCarrito,
+            widgetProducts
         }}>
             {children}
         </CartContext.Provider>
