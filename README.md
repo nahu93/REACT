@@ -11,9 +11,9 @@ https://nervous-swartz-f640fa.netlify.app/
 
 
 
-# Getting Started with Create React App
+# Proyecto React E-commerce
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+
 
 ## Available Scripts
 
