@@ -17,12 +17,7 @@ const NavBar = () => {
   <li class="navbar-nav" >
     <NavLink className="navbar-brand" to='/catalogo'>Catalogo</NavLink>
   </li>
-  <li class="navbar-nav" >
-    <a class= "navbar-brand" aria-current="page" href="#">Oferta!</a>
-  </li>
-  <li class="navbar-nav" >
-    <a class= "navbar-brand" aria-current="page" href="#">Contacto</a>
-  </li>
+
   </ul>
   <li class="navbar-nav" >
     <Link to='/cart'><Cartwidget/></Link>

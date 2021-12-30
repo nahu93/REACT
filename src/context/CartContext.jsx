@@ -1,4 +1,5 @@
 import { createContext, useEffect, useState } from "react";
+import { NavItem } from "react-bootstrap";
 
 export const CartContext = createContext ([])
 
@@ -7,15 +8,15 @@ function CartContextProvider ({children}) {
     const [cartList,setCartList] = useState ([])
     
 
-    const agregarProducto = (item) =>{
+    const agregarProducto =(item) =>{
         setCartList([...cartList, item])
     }
 
-    const vaciarCarrito = () =>{
+    const vaciarCarrito =() =>{
         setCartList([])
     }
     
-    const widgetProducts = () => {
+    const widgetProducts =() => {
         let total = 0
 
 
@@ -26,7 +27,8 @@ function CartContextProvider ({children}) {
        return total
 
     }
-    
+
+   
     
   
 
@@ -35,7 +37,8 @@ function CartContextProvider ({children}) {
             cartList,
             agregarProducto,
             vaciarCarrito,
-            widgetProducts
+            widgetProducts,
+           
         }}>
             {children}
         </CartContext.Provider>

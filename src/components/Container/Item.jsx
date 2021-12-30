@@ -7,9 +7,7 @@ import ItemCount from "../ItemCount/ItemCount";
 
 export default function Item ({item}) {
 
-  function onAdd (cant) {
-    console.log(cant)
-  }
+ 
 
     return (
 

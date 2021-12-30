@@ -18,7 +18,7 @@ const CartWidget = () => {
     useEffect ( ()=>{
 
         const temporal = widgetProducts()
-        console.log(temporal)
+        
         setTotal(temporal)
 
 

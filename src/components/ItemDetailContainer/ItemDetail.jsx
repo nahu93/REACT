@@ -18,7 +18,7 @@ export const ItemDetail = ({prod}) =>{
         setCount(cant)
         agregarProducto ({...prod,cantidad: cant})
       }
-      console.log (cartList)
+     
 
 
     return (

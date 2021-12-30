@@ -26,7 +26,7 @@ import { CartContext } from "../../context/CartContext";
 
 
 useEffect (()=> {
-  console.log ('id', id) 
+  
  
   const db = getFirestore()
   const dbQuery = db.collection('Productos').doc(id)
@@ -34,14 +34,12 @@ useEffect (()=> {
   .then(resp=> setProd({id:resp.id,...resp.data()}))
   
   
-  /* getFetch
-  .then ( (res)  => setProd (res.find ( (e) => e.id === parseInt (id) )))
-  .finally ( () => setLoading (false)); */
+
 
  }, [])
 
 
- console.log("info", prod)
+
 
 
   
