@@ -31,7 +31,7 @@ React e-commerce necesita https://nodejs.org/es/ para correr.
 
 ### librerias externas a crate-react-app
 
- - {Boostrap/Reactboostrap}
+ - {Boostrap/Reactboostrap} v5.1 / v.2.0.3
 Utilizado para agragar los estilos
  - {firebase} v.8.9.1
 Libreria de servicios , que nos facilita y permite desarrollar el front-end
