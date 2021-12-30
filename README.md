@@ -2,7 +2,7 @@
 
 ##Deploy
 
-https://app.netlify.com/sites/nervous-swartz-f640fa/overview
+https://nervous-swartz-f640fa.netlify.app/
 
 
 
