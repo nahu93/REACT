@@ -8,9 +8,9 @@
 # Proyecto React E-commerce
 
 Curso realizado en https://www.coderhouse.com/
-Duracion : 7 semanas / 4hs. semanales
-Profesor : Federico Osandon
-Tutor    : Andres Camilo Cardona Londono
+ - Duracion : 7 semanas / 4hs. semanales
+ - Profesor : Federico Osandon
+ - Tutor    : Andres Camilo Cardona Londono
 
 
 
