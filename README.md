@@ -2,7 +2,7 @@
 
 ##Deploy
 
-https://nervous-swartz-f640fa.netlify.app/
+
 
 
 
@@ -15,17 +15,25 @@ https://nervous-swartz-f640fa.netlify.app/
 
 
 
-## Available Scripts
+## Deploy
 
-In the project directory, you can run:
+https://nervous-swartz-f640fa.netlify.app/
 
-### `npm start`
+## installation
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+React e-commerce necesita https://nodejs.org/es/ para correr.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+
+
+
+
+
+
+### librerias externas a crate-react-app
+
+-{boostrap}
+-{firebase} v.8.9.1
+-{react-router-dom} v.6.0.2
 
 ### `npm test`
 
