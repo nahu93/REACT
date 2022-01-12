@@ -8,7 +8,13 @@ function CartContextProvider ({children}) {
     const [cartList,setCartList] = useState ([])
     
 
-    const agregarProducto =(item) =>{
+    const agregarProducto = (item) =>{
+        const Temporal = cartList.find (e => e.id == item.id )
+
+        if(Temporal){
+            Temporal.cantidad+=item.cantidad
+            return
+        }
         setCartList([...cartList, item])
     }
 
@@ -28,7 +34,7 @@ function CartContextProvider ({children}) {
 
     }
 
-   
+     
     
   
 

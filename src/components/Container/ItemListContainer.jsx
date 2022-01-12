@@ -24,6 +24,7 @@ const Greeting  = () => {
     const dbQuery = db.collection('Productos')
     dbQuery.get ()
     .then (data => setProducts(data.docs.map(item =>({id: item.id,...item.data()}))))
+    .finally(()=>setLoading(false))
 
 },[])
 
@@ -47,7 +48,7 @@ const Greeting  = () => {
 
  return(
    <div>
-     {
+     { loading ? <h1>Cargando...</h1> :
        <ItemLIst lista={products} />
      }
    </div>

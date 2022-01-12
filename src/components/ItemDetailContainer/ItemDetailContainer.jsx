@@ -32,7 +32,7 @@ useEffect (()=> {
   const dbQuery = db.collection('Productos').doc(id)
   dbQuery.get()
   .then(resp=> setProd({id:resp.id,...resp.data()}))
-  
+  .finally(()=>setLoading(false))
   
 
 
@@ -49,7 +49,10 @@ useEffect (()=> {
     
    <div>
 
-       <ItemDetail prod={prod}/>
+   
+
+    { loading ? <h1>Cargando...</h1> :
+     <ItemDetail prod={prod}/>}
 
    </div>
     

@@ -11,6 +11,7 @@ import { useState } from "react";
 const Cart = ( ) => {
     const [datos, setDatos]=useState({nombre:'',apellido:'',email:'',telefono:''})
     const [idOrden,setIdOrden] = useState ('')
+    const [error,setError] = useState(false)
 
     const{cartList,vaciarCarrito}= useContext(CartContext)
 
@@ -24,7 +25,21 @@ const Cart = ( ) => {
 
     let Total = 0;
 
+
     const generarOrden =(e)=>{
+
+      if(datos.email == "")
+      {setError(true)
+         return};
+      
+
+      if(cartList == "")
+      {setError(true) 
+        
+        return 
+      
+
+      }
      
 
       const orden = {}
@@ -32,15 +47,18 @@ const Cart = ( ) => {
     
       orden.buyer= {datos}
       
-      orden.items= cartList.map (cartItem=>{
+      orden.items= cartList.map (cartItem =>{
         const id = cartItem.id
         const nombre = cartItem.nombre
         const cantidad = cartItem.cantidad
-        const precio = cartItem.precio*cartItem.cantidad
+        const precio = cartItem.precio*cartItem.cantidad 
+        
 
         return {id,nombre,cantidad,precio}
       })
 
+      
+    
     const db = getFirestore()
     db.collection('orden').add(orden)
     .then (resp=>setIdOrden(resp.id))
@@ -53,6 +71,7 @@ const Cart = ( ) => {
 
 
     return (
+      
 
      
 
@@ -108,7 +127,13 @@ const Cart = ( ) => {
          </section>
        <hr />
        
+       <section>
 
+          
+{cartList =='' && <Alert variant="danger">El carrito esta vacio</Alert>}
+
+
+</section>
        
        <Form style={{ width: '18rem' }} >
 
@@ -124,9 +149,11 @@ const Cart = ( ) => {
    
   </Form.Group>
 
+<section>
+  {datos.email ==''&& <Alert variant="danger">Ingrese su email para finalizar la compra</Alert>}
+</section>
 
-
-
+ 
   <Form.Group className="mb-3" controlId="formBasicEmail">
     <Form.Label>Email</Form.Label>
     <Form.Control type="text" placeholder="Email" name="email" onChange={handleChange}/>
