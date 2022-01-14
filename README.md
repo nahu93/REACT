@@ -17,7 +17,8 @@ Curso realizado en https://www.coderhouse.com/
 
 ## Deploy
 
-https://nervous-swartz-f640fa.netlify.app/
+https://confident-brattain-900805.netlify.app/
+
 
 ## installation
 
